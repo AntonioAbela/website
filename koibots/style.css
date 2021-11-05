@@ -11,6 +11,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     background-color: rgb(47, 47, 47);
+    margin-bottom: 8vw;
 }
 
 h1 {
@@ -98,7 +99,8 @@ img{
     display: inline-block;
     position: absolute;
     left: 50vw;
-    top: 15vw;
+    top: 18vw;
+    margin-right: 20vw;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
 
 }
@@ -109,11 +111,13 @@ div#form{
     background-color: var(--orange);
     margin-right: 40vw;
     margin-left: 40vw;
-    margin-top: 8vw;
+    margin-top: 9vw;
+    margin-bottom: 10vw;
     padding: 1em;
     border-radius: .2em;
     scale: 1.5;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
+   
 }
 
 form{
@@ -200,6 +204,7 @@ textarea:focus{
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 5vw;
+        width: 80vw;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -209,6 +214,6 @@ textarea:focus{
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 5vw;
-        scale: .6;
+        width: 80vw;
     }
 }
