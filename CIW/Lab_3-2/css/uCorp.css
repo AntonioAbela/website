@@ -44,6 +44,12 @@ nav {
   height: 420px;
   padding-right: 24px;
   margin-right: 10px;
+  opacity: 0.8;
+}
+section {
+  background-image: url(../media/globe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .floatright {
