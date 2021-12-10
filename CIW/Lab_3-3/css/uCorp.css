@@ -58,6 +58,14 @@ section {
   clear: right;
   margin: 10px;
 }
-
+.navlinks {
+  display: block;
+  border: 2px solid #a1a1a1;
+  padding: 2px 2px;
+  background: #add8e6;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 5px 5px 5px #888888;
+}
 
 
