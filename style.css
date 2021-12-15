@@ -74,6 +74,24 @@
 		padding-top: .01vw;
 		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
 	}
+
+	.experiments {
+		background-image: linear-gradient( rgb(255, 179, 0) , rgb(255, 140, 0) );
+		color: rgb(255, 255, 255);
+		padding: 2vw;
+		border-radius: 1vw;
+		padding-top: .01vw;
+		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
+	}
+
+	.mini_projects {
+		background-image: linear-gradient(  rgb(255, 140, 0)  , rgb(255, 98, 0) );
+		color: rgb(255, 255, 255);
+		padding: 2vw;
+		border-radius: 1vw;
+		padding-top: .01vw;
+		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
+	}
 	li > a, div > a {
 		text-decoration: none;
 		color: white;
