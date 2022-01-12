@@ -72,6 +72,20 @@ section {
   text-decoration: none;
   box-shadow: 5px 5px 5px #888888;
 }
+#img-rotate {
+  -ms-transform: rotate(345deg); 
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+#video-rotate {
+  -ms-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+#logo-rotate {
+  -webkit-transform: rotateY(180deg); 
+  transform: rotateX(180deg);
+}
 
 
 
