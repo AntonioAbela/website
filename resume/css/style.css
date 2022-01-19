@@ -45,6 +45,7 @@ h1, h2, h3{
   color: #000;
 }
 
+
 li{
   list-style-type: none;
 }
@@ -108,7 +109,7 @@ li{
   left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
   font-weight: 400;
   font-size: 11pt;
-  color: #555;
+  color: rgb(0, 132, 255);
 }
 
 #main h2 > i{
@@ -118,7 +119,7 @@ li{
   position: absolute;
   left: var(--main-blocks-title-icon-offset-left);
   z-index: 1; /* over decorator line */
-  color: #444;
+  color: rgb(0, 132, 255);
 }
 
 #main h2::after{ /* extends the decorator line */
@@ -208,7 +209,7 @@ li{
   width: var(--decorator-outer-dim);
   height: var(--decorator-outer-dim);
   border-radius: calc(var(--decorator-outer-dim) / 2);
-  background-color: #fff;
+  background-color: rgb(0, 132, 255);
 }
 
 .decorator::after{
@@ -220,7 +221,7 @@ li{
   width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
-  background-color: #555;
+  background-color: rgb(0, 132, 255);
 }
 
 .blocks:last-child .decorator{ /* slightly shortens it */
@@ -236,7 +237,7 @@ li{
 }
 
 .details header{
-  color: #000;
+  color: rgb(0, 0, 0);
 }
 
 .details h3{
@@ -367,3 +368,5 @@ li{
   font-weight: 400;
   font-style: normal;
 }
+
+
