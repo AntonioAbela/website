@@ -17,10 +17,10 @@ function loadPlaylist() {
  }
 
  function getSavedSongs() {
-    return getStorearray("playlist"); 
+    return getStoreArray("playlist"); 
 }
 
-function getStorearray(key) {
+function getStoreArray(key) {
     var playlistArray = localStorage.getItem(key);
     if (playlistArray == null || playlistArray == "") {
         playlistArray = new Array();
