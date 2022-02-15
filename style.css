@@ -16,49 +16,9 @@
 			font-size: larger;
 
 
-		}
-    .Elements {
-    	background-image: linear-gradient(#f33e1a, #FF773D );
-		color: white;
-		padding: 2vw;
-		border-radius: 1vw;
-		padding-top: .01vw;
-		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
 	}
-	.Lists {
-		background-image: linear-gradient(#FF773D, #FFB238 );
-		color: white;
-		padding: 2vw;
-		border-radius: 1vw;
-		padding-top: .01vw;
-		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
-	}
-	.Tables {
-		background-image: linear-gradient(#F19143, #FFB238 );
-		color: white;
-		padding: 2vw;
-		border-radius: 1vw;
-		padding-top: .01vw;	
-		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
-	}
-	.Links {
-		background-image: linear-gradient(#FFB238, #FABC3C );
-		color: white;
-		padding: 2vw;
-		border-radius: 1vw;
-		padding-top: .01vw;
-		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
-	}
-	.Images {
-		background-image: linear-gradient(#FABC3C, #face3c );
-		color: white;
-		padding: 2vw;
-		border-radius: 1vw;
-		padding-top: .01vw;
-		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
-	}
-	.SSR {
-		background-image: linear-gradient(#face3c, rgb(255, 208, 0) );
+	.projects {
+		background-image: linear-gradient(#f33e1a, #f37c1a );
 		color: rgb(255, 255, 255);
 		padding: 2vw;
 		border-radius: 1vw;
@@ -67,7 +27,16 @@
 	}
 
 	.ciw {
-		background-image: linear-gradient(rgb(255, 208, 0), rgb(255, 179, 0) );
+		background-image: linear-gradient(#f37c1a, #f3a71a );
+		color: rgb(255, 255, 255);
+		padding: 2vw;
+		border-radius: 1vw;
+		padding-top: .01vw;
+		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.826));
+	}
+
+	.headfirst {
+		background-image: linear-gradient(#f3a71a, #f3d21a);
 		color: rgb(255, 255, 255);
 		padding: 2vw;
 		border-radius: 1vw;
@@ -76,7 +45,7 @@
 	}
 
 	.experiments {
-		background-image: linear-gradient( rgb(255, 179, 0) , rgb(255, 140, 0) );
+		background-image: linear-gradient( #f3d21a , #f3831a );
 		color: rgb(255, 255, 255);
 		padding: 2vw;
 		border-radius: 1vw;
