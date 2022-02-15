@@ -16,7 +16,7 @@ function loadPlaylist() {
     }
  }
 
- function getSavedSongs() {
+function getSavedSongs() {
     return getStoreArray("playlist"); 
 }
 
