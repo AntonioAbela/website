@@ -23,23 +23,19 @@
     <p id="lat">Latitude: </p>
     <p id="vel">Velocity: </p>
     <div id="zoomlvl">
-    Zoom Level:
-    <br>
-    <input type="text" id="zoom">
-    <br>
-    <button id="applyZoom" type="submit">Apply</button>
+    <p id="zoomNumber">Zoom Level:</p>
+    <input type="range" min="1" max="12" value="1" id="zoomSlider" step="0.5">
     </div>
     <script>
-        const zoomApply = document.getElementById('applyZoom');
-        let zoomLevel = document.getElementById('zoom');
-        console.log(zoomLevel);
+        let zoomSlider = document.getElementById('zoomSlider');
+        console.log(zoomSlider);
         let zoomer;
-        zoomApply.onclick = applyZoom;
+        zoomSlider.oninput = applyZoom;
+        document.getElementById('zoomNumber').innerHTML = 'Zoom Level: ' + zoomSlider.value;
 
         function applyZoom() {
-            zoomer = zoomLevel.value;
-            console.log(zoomer);
-
+            zoomer = zoomSlider.value;
+            document.getElementById('zoomNumber').innerHTML = 'Zoom Level: ' + zoomSlider.value;
         }
 
         const mymap = L.map('map').setView([0, 0], 2);
