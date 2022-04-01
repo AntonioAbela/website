@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Lab 6-2</title>
+
+<script>
+
+/****************************************************************
+  A function named myFunction() is defined.
+  The function displays an alert() when a form button is clicked.
+****************************************************************/
+
+function myFunction(arg1) {
+    alert('The function has been called and was passed ' + arg1);
+    return "myFunction() return value";
+} 
+
+</script>
+
+</head>
+
+<body>
+
+<h3>CIW Advanced HTML5 and CSS3 Specialist</h3>
+<hr/>
+
+<!-- Add an onclick event handler to call the function -->
+
+<form name="myForm">
+<input type="button" VALUE="Call Function" onclick="alert(myFunction('a string of text'))"/>
+</form>
+
+</body>
+</html>
