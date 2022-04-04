@@ -3,10 +3,17 @@
 <head>
 <meta charset="utf-8" />
 <title>Lab 6-1</title>
-
+<link  id="cssLink" rel="stylesheet" href="style.css">
 <script>
 function myFunction() {
   alert('The HTML page has loaded')
+}
+function buttonClick() {
+  alert('The button has been clicked');
+}
+
+function textInput() {
+  alert('The text input has been changed')
 }
 /***********************************************
   Define a function named myFunction().
@@ -19,8 +26,13 @@ function myFunction() {
 
 <body onload="myFunction()";>
 
-<h3>CIW Advanced HTML5 and CSS3 Specialist</h3>
+<h3>Lesson 6 Lab #1</h3>
 <hr/>
+<button onclick="buttonClick()";>Click Me!</button>
+<input onchange="textInput()"; id="textInput" type="text" placeholder="Type Something">
+<footer id="vLinks" style="text-align: center;">
+  <script src="../../footer.js"></script>
+</footer>
 
 </body>
 </html>

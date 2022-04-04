@@ -1,0 +1,32 @@
+h3 {
+    background-color: blue;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 35px;
+}
+body {
+    text-align: center;
+}
+
+button {
+    border: none;
+    padding: 20px;
+    background-color: rgb(247, 243, 243);
+}
+
+button:active {
+    background-color: rgb(227, 225, 225) ;
+}
+
+input {
+    border: none;
+    padding: 20px;
+    background-color: rgb(247, 243, 243);
+}
+
+input:focus {
+    border: 2px solid blue;
+    outline: none;
+}
