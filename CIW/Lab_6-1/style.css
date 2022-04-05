@@ -1,3 +1,5 @@
+
+
 h3 {
     background-color: blue;
     text-align: center;
@@ -8,25 +10,38 @@ h3 {
 }
 body {
     text-align: center;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
 }
 
-button {
+button, input {
     border: none;
     padding: 20px;
+    color: rgb(45, 45, 45);
     background-color: rgb(247, 243, 243);
+    margin: 5px;
+    font-family: 'Oswald', sans-serif;
 }
 
 button:active {
     background-color: rgb(227, 225, 225) ;
 }
 
-input {
-    border: none;
-    padding: 20px;
-    background-color: rgb(247, 243, 243);
-}
+
 
 input:focus {
-    border: 2px solid blue;
-    outline: none;
+    outline: 2px solid blue;
+    border: none;
+}
+footer {
+    position: absolute;
+    bottom: 20px;
+    right: 30%;
+    left: 30%;
+}
+
+#buttonContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }

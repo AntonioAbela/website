@@ -2,34 +2,55 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Lab 6-1</title>
+<title>Lab 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
 <link  id="cssLink" rel="stylesheet" href="style.css">
 <script>
-function myFunction() {
-  alert('The HTML page has loaded')
-}
-function buttonClick() {
-  alert('The button has been clicked');
-}
+  function init() {
+    let removeCSSButton = document.getElementById("removeCSS");
+  let addCSSButton = document.getElementById("addCSS");
+  
+  removeCSSButton.onclick = function() {
+    document.getElementById('cssLink').href = '';
+  }
 
-function textInput() {
-  alert('The text input has been changed')
-}
-/***********************************************
-  Define a function named myFunction().
-  The function displays an alert() when invoked.
-***********************************************/
-</script>
+  addCSSButton.onclick = function() {
+    document.getElementById('cssLink').href = 'style.css';
+  }
+
+  }
+
+  function buttonClick() {
+    alert('The button has been clicked');
+  }
+  
+  function textInput() {
+    alert('The text input has been changed')
+  }
+  
+  window.onload = init;
+  /***********************************************
+    Define a function named myFunction().
+    The function displays an alert() when invoked.
+  ***********************************************/
+  </script>
 </head>
 
 <!-- Add an onload event handler to call the function -->
 
-<body onload="myFunction()";>
+<body>
 
-<h3>Lesson 6 Lab #1</h3>
+<h3>Lesson 6</h3>
 <hr/>
+<div id="buttonContainer">
 <button onclick="buttonClick()";>Click Me!</button>
 <input onchange="textInput()"; id="textInput" type="text" placeholder="Type Something">
+<br>
+<button id="removeCSS">Remove CSS</button>
+<button id="addCSS">Add CSS</button>
+</div>
 <footer id="vLinks" style="text-align: center;">
   <script src="../../footer.js"></script>
 </footer>
