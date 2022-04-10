@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <title>HTML5 File API Example</title>
+        <style>
+            html {
+                font-family: 'Josefin Sans', sans-serif;
+            }
+           
+            p {
+                text-align: center;
+                font-size: 40px;
+            }
+            input {
+                font-family: 'Josefin Sans', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Select two files</p>
+        <br>
+        <input type="file" id="files" name="files[]" multiple />
+        <output id="list"></output>
+        <script>
+            function handleFileSelect(e) {
+                let files = e.target.files;
+                let output = "";
+                for (let i = 0, x = files.length; i < x; ++i) {
+                    let name = escape(files[i].name);
+                    let type = files[i].type || "n/a";
+                    let size = files[i].size;
+                    let lastModDate = files[i].lastModifiedDate ? files[i].lastModifiedDate.toLocaleDateString() : "n/a";
+                    output += "<li><strong> File Name: " + name + "</strong> (" + type + ") - Size: " + size + " bytes, last modified: " + lastModDate + "</li>";
+                }
+                document.getElementById("list").innerHTML = "<ul>" + output + "</ul>";
+            }
+            document.getElementById("files").addEventListener("change", handleFileSelect);
+        </script>
+    </body>
+</html>
