@@ -1,0 +1,55 @@
+const StudentVue = require('studentvue.js');
+
+putObject();
+let mpObject = [];
+let allGrades = [];
+
+async function putObject() {
+    for (let i = 1; i <= 5; i += 2) {
+        let testthing = await (getGrades('https://va-arl-psv.edupoint.com/', '986134', 'xbnu4gnl', i))
+        mpObject.push(testthing)
+        testthing = ''
+        console.log(i)
+        console.log(mpObject)
+        if (i === 5) {
+            callGrades();
+        } 
+    }
+}
+
+function getGrades(url, username, password, reportingPeriod)  {
+    return StudentVue.login(url, username, password, reportingPeriod)
+        .then(client => client.getGradebook(reportingPeriod))
+        .then(JSON.parse)
+    
+}
+
+
+function callGrades() {
+    for (let j = 0; j <= 2; j++) {
+        if (j === 1) {
+            allGrades.push(mpObject[j]['Gradebook']['Courses']['Course']['0']['Marks']['Mark']['0']['CalculatedScoreRaw'])
+            console.log(mpObject[j]['Gradebook']['Courses']['Course']['0']['Marks']['Mark']['0']['CalculatedScoreRaw'])
+        }
+        else {
+            allGrades.push(mpObject[j]['Gradebook']['Courses']['Course']['0']['Marks']['Mark']['CalculatedScoreRaw'])
+            console.log(mpObject[j]['Gradebook']['Courses']['Course']['0']['Marks']['Mark']['CalculatedScoreRaw'])
+        } 
+    } 
+    console.log(allGrades)
+    computeLowestGrade(allGrades);
+}
+
+function computeLowestGrade(allGrades) {
+    let totalNeeded = 358;
+    let totalCurrent = 0;
+    for (let i = 0; i < allGrades.length; i++) {
+        totalCurrent += parseInt(allGrades[i])
+        
+    }
+    console.log(totalNeeded - totalCurrent)
+
+}
+
+
+
