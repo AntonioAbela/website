@@ -12,7 +12,7 @@ let grades = {
 
 async function putObject() {
     for (let i = 1; i <= 5; i += 2) {
-        let testthing = await (getGrades('https://va-arl-psv.edupoint.com/', '986344', '986344', i))
+        let testthing = await (getGrades('https://va-arl-psv.edupoint.com/', '986134', 'xbnu4gnl', i))
         mpObject.push(testthing)
         testthing = ''
         //console.log(i)
@@ -31,7 +31,7 @@ function getGrades(url, username, password, reportingPeriod)  {
 }
 
 
-function callGrades() { // Add feature to choose class
+function callGrades() { 
     for (let i = 0; i < 7; i++) {
         for (let j = 0; j <= 2; j++) {
             if (j === 1) {
