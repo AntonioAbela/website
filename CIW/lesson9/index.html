@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <title>Forms - Lesson 9</title>
+    <style type="text/css">
+        .redStar {
+            color: rgb(209, 3, 3);
+            display:inline;
+        }
+        * {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        input:focus {
+            outline-color: rgb(91, 140, 245);
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        button:hover[type="submit"] {
+            padding: 12px;
+            margin: 3px;
+            border-radius: 5px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(19, 206, 19);
+        }
+
+        button:hover[type="reset"] {
+            padding: 12px;
+            margin: 3px;
+            border-radius: 5px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(230, 64, 64);
+        }
+
+        fieldset {
+            width: 33vw;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 30vh;
+            margin-bottom: 35vh;
+            border-color: rgb(91, 140, 245);
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+           <legend>Create Account</legend> 
+           <p>  
+                <label for="fname"><p class="redStar">*</p>First Name: </label>
+                <input type="text" id="fname" placeholder="First Name" name="fname" autocomplete="on" required>
+                <label for="lname"><p class="redStar">*</p>Last Name: </label>
+                <input type="text" id="lname" placeholder="Last Name" name="lname" autocomplete="on" required>
+           </p>
+           <p>
+               <label for="email"><p class="redStar">*</p>Email: </label>
+               <input type="email" placeholder="user@domain.com" id="email" name="email" pattern="^.+@.+$" autocomplete="on" required>
+               <label for="phone">Phone Number: </label>
+               <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+           </p>
+           <p>
+            <label for="dob">Birthday: </label>
+            <input type="date" name="dob" id="dob">
+           </p>
+           <p>
+               <label for="password"><p class="redStar">*</p>Password: </label>
+               <input type="password" placeholder="Password" name="password" id="password" required>
+           </p>
+           <p>
+               <button type="submit">Create Account</button>
+               <button type="reset">Reset</button>
+           </p>
+        </fieldset>
+    </form>
+    <footer id="vLinks" style="text-align: center;">
+        <script src="../../footer.js"></script>
+    </footer>
+    <script>
+        let createAccountForm = document.querySelector('form');
+        let fname = document.getElementById('fname');
+        let lname = document.getElementById('lname');
+        createAccountForm.onsubmit = welcome;
+
+        function welcome() {
+            alert('Welcome ' + fname.value + ' ' + lname.value + '!')
+        }
+    </script>
+</body>
+</html>
