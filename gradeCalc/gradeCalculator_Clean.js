@@ -1,13 +1,13 @@
 const StudentVue = require('studentvue.js');
-
 putObject();
 let mpObject = [];
 let allGrades = [];
 let className = '';
 let grades = {
-    a: 358,
-    b: 318,
-    c: 278
+    a: 89.5,
+    b: 79.5,
+    c: 69.5,
+    d: 59.5
 }
 
 async function putObject() {
@@ -16,7 +16,7 @@ async function putObject() {
         mpObject.push(testthing)
         testthing = ''
         //console.log(i)
-        //console.log(mpObject)
+        console.log(mpObject)
         if (i === 5) {
             callGrades();
         } 
@@ -31,7 +31,7 @@ function getGrades(url, username, password, reportingPeriod)  {
 }
 
 
-function callGrades() { // Add feature to choose class
+function callGrades() { 
     for (let i = 0; i < 7; i++) {
         for (let j = 0; j <= 2; j++) {
             if (j === 1) {
@@ -54,11 +54,14 @@ function callGrades() { // Add feature to choose class
 }
 
 function computeLowestGrade(allGrades, grade) {
-    let gradeWanted = grades[grade];
+    let zero = 0;
+    for (let array = 0; array < allGrades.length; array++) {
+        if(allGrades[array] == 0) {zero++}
+    }
+    let gradeWanted = (allGrades.length - zero) * grades[grade] + grades[grade];
     let totalCurrent = 0;
     for (let i = 0; i < allGrades.length; i++) {
-        totalCurrent += parseInt(allGrades[i])
-        
+            totalCurrent += parseInt(allGrades[i])
     }
     if (grade === 'a') {
     console.log('You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title'])
