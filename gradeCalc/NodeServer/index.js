@@ -20,9 +20,8 @@ server.listen(3000, () => {
 
 
 io.on('connection', (socket) => {
-    socket.on('getGrades', (username) => {
-    //io.emit('getGrades', user, pass)
-    putObject(username)
+    socket.on('getGrades', (username, password) => {
+    putObject(username, password)
     });
   });
 
@@ -37,9 +36,9 @@ let grades = {
     d: 59.5
 }
 
-async function putObject(username) {
+async function putObject(username, password) {
     for (let i = 1; i <= 5; i += 2) {
-        let testthing = await (getGrades('https://va-arl-psv.edupoint.com/', username, 'xbnu4gnl', i))
+        let testthing = await (getGrades('https://va-arl-psv.edupoint.com/', username, password, i))
         mpObject.push(testthing)
         testthing = ''
         //console.log(i)
@@ -92,13 +91,13 @@ function computeLowestGrade(allGrades, grade) {
     }
     if (grade === 'a') {
     console.log('You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title'])
-    io.on("connection", (socket) => {
-        socket.emit("needed", 'You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title'])
-    })
+    io.emit("needed", 'You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title'])
+
 
     }
     else {
-        console.log('You need a ' + (gradeWanted - totalCurrent) + '% to get a ' + grade.toUpperCase() + ' in ' + className['Title']) 
+        console.log('You need a ' + (gradeWanted - totalCurrent) + '% to get a ' + grade.toUpperCase() + ' in ' + className['Title'])
+        io.emit('needed'), 'You need a ' + (gradeWanted - totalCurrent) + '% to get a ' + grade.toUpperCase() + ' in ' + className['Title'] 
     }
 
 }
