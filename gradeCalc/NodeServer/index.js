@@ -6,6 +6,9 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
+
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
@@ -18,12 +21,12 @@ server.listen(3000, () => {
   console.log('listening on *:3000');
 });
 
-
 io.on('connection', (socket) => {
     socket.on('getGrades', (username, password) => {
-    putObject(username, password)
+    //console.log(username + ' ' + password)
+        putObject(username, password)
     });
-  });
+  
 
 
 let mpObject = [];
@@ -36,15 +39,23 @@ let grades = {
     d: 59.5
 }
 
+
 async function putObject(username, password) {
+    mpObject = [];
     for (let i = 1; i <= 5; i += 2) {
         let testthing = await (getGrades('https://va-arl-psv.edupoint.com/', username, password, i))
         mpObject.push(testthing)
         testthing = ''
         //console.log(i)
-        console.log(mpObject)
+        //console.log(mpObject)
         if (i === 5) {
+        try{
             callGrades();
+            socket.emit("sucess")
+        } catch(err){
+            console.log('invalid user/pass' + err.stack)
+            socket.emit("error", 'Invalid Username or Password')
+            }
         } 
     }
 }
@@ -71,15 +82,20 @@ function callGrades() {
             className = mpObject[j]['Gradebook']['Courses']['Course'][i];
             
     }
-    //console.log(allGrades)
+    let classNamed = className['Title']
+    socket.emit('sendClient', allGrades, classNamed)
+    //console.log(allGrades, classNamed)
     //console.log(className)
-    computeLowestGrade(allGrades, 'a');
+    //computeLowestGrade(allGrades);
     allGrades = [];
     className = '';
+    classNamed = '';
 } 
 }
 
-function computeLowestGrade(allGrades, grade) {
+
+
+function computeLowestGrade(allGrades, grade,) {
     let zero = 0;
     for (let array = 0; array < allGrades.length; array++) {
         if(allGrades[array] == 0) {zero++}
@@ -89,20 +105,24 @@ function computeLowestGrade(allGrades, grade) {
     for (let i = 0; i < allGrades.length; i++) {
             totalCurrent += parseInt(allGrades[i])
     }
+    console.log(roomId)
     if (grade === 'a') {
-    console.log('You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title'])
-    io.emit("needed", 'You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title'])
+        console.log('You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title'])
+        finalMessage = 'You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title']
+        
+        /*io.emit("needed", 'You need a ' + (gradeWanted - totalCurrent) + '% to get an ' + grade.toUpperCase() + ' in ' + className['Title'], roomId)*/
 
 
     }
     else {
         console.log('You need a ' + (gradeWanted - totalCurrent) + '% to get a ' + grade.toUpperCase() + ' in ' + className['Title'])
-        io.emit('needed'), 'You need a ' + (gradeWanted - totalCurrent) + '% to get a ' + grade.toUpperCase() + ' in ' + className['Title'] 
+        finalMessage = 'You need a ' + (gradeWanted - totalCurrent) + '% to get a ' + grade.toUpperCase() + ' in ' + className['Title']
+       
+        /*io.emit("needed", 'You need a ' + (gradeWanted - totalCurrent) + '% to get a ' + grade.toUpperCase() + ' in ' + className['Title'], roomId) */
     }
-
 }
 
-
+});
 
 
 
