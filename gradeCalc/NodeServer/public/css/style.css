@@ -52,6 +52,7 @@ form {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 22%;
+    opacity: 100;
     margin: 0em 0em;
     transition: all 1.5s ease-in-out;
 }
@@ -140,5 +141,75 @@ li:last-child {
 
 
 
+@media only screen and (max-width: 1400px) {
 
+    #messages {
+        /*display:none;*/
+        list-style-type: none;
+        vertical-align:middle;
+        padding: 0;
+        margin: 0;
+        width: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.15em;
+        opacity: 100;
+        transition: opacity 0.5s ease-in-out;
+    }
+    #messages > li {
+        padding: 0.9rem 1rem; 
+    }
+    
+    form {
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    
+    #messages {
+        width: 80%;
+        text-align: center;
+    }
+
+    form {
+        width: 35%;
+    }
+
+    .toastTarget {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+   
+
+
+    #messages {
+        width: 90%;
+    }
+    
+    form {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    form {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    form {
+        width: 80%;
+    }
+
+    .toastTarget {
+        width:95vw;
+    }
+}
 

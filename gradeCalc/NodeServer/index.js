@@ -39,7 +39,7 @@ async function putObject(username, password) {
         mpObject.push(testthing)
         testthing = ''
         //console.log(i)
-        //console.log(mpObject)
+        console.log(mpObject)
         if (i === 5) {
         try{
             callGrades();

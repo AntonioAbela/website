@@ -70,7 +70,13 @@
     </form>
 
 
-    <ul id="messages"></ul>
+    <ul id="messages">
+      <li>Test1</li>
+      <li>Test1</li>
+      <li>Test1</li>
+      <li>Test1</li>
+      <li>Test1</li>
+    </ul>
     <script src="/socket.io/socket.io.js"></script>
     <script>
     let socket = io()
@@ -211,6 +217,9 @@
 
     function printGrades(arg) {
       form.style.left = '15%'
+      if (window.matchMedia("(max-width: 1400px)").matches) {
+      form.style.opacity = '0%'
+      }
       setTimeout(function() {
         let msg = document.createElement('li')
         Swal.close()
@@ -228,8 +237,6 @@
         setTimeout(function(){messages.style.opacity = '1'}, 17)
       }, 1560)
     }
-
-
 
     </script>
   </body>
